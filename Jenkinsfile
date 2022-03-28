@@ -10,7 +10,7 @@ node {
 
   }
    stage("Push image"){
-     docker.withRegistry('https://registry.hub.docker.com/%27,%27docker%27) { 
+     docker.withRegistry('https://registry.hub.docker.com/%27,%27docker%27') { 
        app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
        app.push("${env.BRANCH_NAME}-latest")
      }
